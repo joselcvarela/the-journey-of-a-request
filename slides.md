@@ -30,7 +30,7 @@ Introduce the concept with a relatable analogy—like sending a letter through t
 
 # The Journey Begins – Client Side
 
-- User clicks a link or submits a form
+- User performs an action like clicks a link or submit a form
 - Browser constructs HTTP request (method, headers, cookies)
 - DNS lookup resolves domain to IP
 - TCP handshake establishes connection
@@ -56,6 +56,18 @@ Authorization: Bearer token123
 
 ::notes::
 Show a raw request and explain each part. Ask the audience what headers they commonly see.
+
+---
+
+# The Middleware
+
+- **Firewalls**: Security guards for a network. They can be on the client's side or/and the server's side, blocking suspicious requests.
+
+- **Load Balancers**: They distribute incoming requests across multiple servers to prevent any single one from being overloaded. This means your request might not hit the same server every time.
+
+- **Proxies / API Gateways**: Act on behalf of the client or server. They can handle caching, authentication, SSL termination, and rate limiting.
+
+- **Content Delivery Network (CDN)**: A geographically distributed network of servers. It caches static content (like images and CSS) closer to the user for faster delivery.
 
 ---
 
@@ -112,7 +124,7 @@ Show a screenshot of Dev Tools inspecting a failed request.
 # Real-World Case Study
 
 - Ticket: “User can’t log in”
-- Found: POST request missing CSRF token
+- Found: POST request missing cookie token
 - Fix: Frontend bug, not backend
 - Lesson: Always inspect the request payload
 
@@ -123,11 +135,11 @@ Make it interactive—ask the audience what they would check first.
 
 # Quick Troubleshooting Checklist
 
-✅ Check status code
-✅ Inspect headers
-✅ Confirm endpoint exists
-✅ Review logs
-✅ Test manually (curl/Postman)
+- Check status code
+- Inspect headers
+- Confirm endpoint exists
+- Review logs
+- Test manually (curl/Postman)
 
 ::notes::
 Encourage them to use this checklist before escalating.
